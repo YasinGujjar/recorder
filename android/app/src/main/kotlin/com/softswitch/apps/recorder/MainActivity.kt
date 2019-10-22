@@ -52,6 +52,14 @@ class MainActivity: FlutterActivity() {
     }
 
 
+
+
+      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+          startForegroundService(Intent(this@MainActivity, TService::class.java))
+      }
+      else{
+          startService(Intent(this@MainActivity, TService::class.java))
+      }
   }
 
 
